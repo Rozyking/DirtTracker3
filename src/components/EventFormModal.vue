@@ -39,10 +39,43 @@ export default {
     }
   },
   methods: {
-    blankForm() { /* unchanged */ },
-    resetForm() { /* unchanged */ },
-    validate() { /* unchanged */ },
-    save() { /* unchanged */ }
+    blankForm() {
+      return { date: null, rank: null, car: null, type: null, stageCount: null, country: null, stage: null };
+    },
+    resetForm() {
+      if (this.event) {
+        this.form = {
+          date: this.event.date ?? null,
+          rank: this.event.rank,
+          car: this.event.car,
+          type: this.event.name,
+          stageCount: this.event.stageCount ?? null,
+          country: this.event.country,
+          stage: this.event.nextStage
+        };
+      } else {
+        this.form = this.blankForm();
+      }
+      this.errors = {};
+    },
+    validate() {
+      const errors = {};
+      if (!this.form.country) errors.country = "Choose a country.";
+      if (!this.form.stage) errors.stage = "Choose a stage.";
+      if (!this.form.date) errors.date = "Enter the start date.";
+      if (!this.form.rank) errors.rank = "Choose a rank.";
+      if (!this.form.car) errors.car = "Choose a car";
+      if (!this.form.type) errors.type = "Choose an event type.";
+      if (!Number.isInteger(this.form.stageCount) || this.form.stageCount < 1) {
+        errors.stageCount = "Enter 1 or more.";
+      }
+      this.errors = errors;
+      return Object.keys(errors).length === 0;
+    },
+    save() {
+      if (!this.validate()) return;
+      this.$emit("save", { ...this.form });
+    }
   }
 }
 </script>

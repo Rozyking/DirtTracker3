@@ -8,8 +8,14 @@ export default {
         selectedStage: { type: String, default: null }
     },
     computed: {
-        stageResults() { /* unchanged */ },
-        hasData() { /* unchanged */ }
+        stageResults() {
+            return this.results
+                .filter(r => r.stage === this.selectedStage)
+                .sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+        },
+        hasData() {
+            return this.stageResults.length > 0;
+        }
     },
     watch: {
         stageResults: {
@@ -28,10 +34,11 @@ export default {
             if (!this.hasData) return;
 
             const labels = this.stageResults.map((r, i) => r.date || "Run " + (i + 1));
-            const times = this.stageResults.map(r => this.toSeconds(r.time));
+            const times = this.stageResults.map(r => toSeconds(r.time));
             const styles = this.stageResults.map(r => (r.pb ? "star" : "circle"));
             const radii = this.stageResults.map(r => (r.pb ? 9 : 4));
 
+            // this.chart is deliberately not in data(), so Vue doesn't wrap it in a reactive proxy
             if (this.chart) {
                 const dataset = this.chart.data.datasets[0];
                 this.chart.data.labels = labels;
@@ -64,13 +71,13 @@ export default {
                         title: { display: true, text: this.selectedStage },
                         tooltip: {
                             callbacks: {
-                                label: context => this.formatSeconds(context.parsed.y)
+                                label: context => formatSeconds(context.parsed.y)
                             }
                         }
                     },
                     scales: {
                         y: {
-                            ticks: { callback: value => this.formatSeconds(value) }
+                            ticks: { callback: value => formatSeconds(value) }
                         }
                     }
                 }

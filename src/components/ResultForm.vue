@@ -42,10 +42,37 @@ export default {
       return "result-" + name;
     },
     validate() {
-      // ...your existing validate() body, unchanged
+      const errors = {};
+      const time = (this.form.time || "").trim();
+
+      if (!this.form.country) errors.country = "Choose a country.";
+      if (!this.form.stage) errors.stage = "Choose a stage.";
+      if (!this.form.car) errors.car = "Choose a car.";
+      if (!this.form.date) errors.date = "Enter the result date.";
+      if (!this.form.conditions) errors.conditions = "Choose conditions.";
+
+      if (!time) {
+        errors.time = "Enter your time.";
+      } else if (!/^\d{1,2}:[0-5]\d\.\d{1,3}$/.test(time)) {
+        errors.time = "Use mm:ss.fff, like 3:58.223.";
+      }
+
+      // Position optional, but must be a whole number >= 1.
+      const pos = this.form.position;
+      if (pos !== null && pos !== "" && (!Number.isInteger(pos) || pos < 1)) {
+        errors.position = "Enter 1 or higher.";
+      }
+
+      this.errors = errors;
+      return Object.keys(errors).length === 0;
     },
     save() {
-      // ...your existing save() body, unchanged
+      if (!this.validate()) return;
+      this.$emit("save", {
+        ...this.form,
+        time: this.form.time.trim(),
+        position: Number.isInteger(this.form.position) ? this.form.position : null
+      });
     }
   }
 }
