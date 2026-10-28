@@ -1,20 +1,21 @@
+<script>
+import CountrySelect from '@/components/CountrySelect.vue'
+import stageData from '@/data/stages.json'
+
+export default {
+  components: { CountrySelect },
+  data() {
+    return { stageData, country: null }
+  },
+  computed: {
+    countries() { return Object.keys(this.stageData) }
+  }
+}
+</script>
+
 <template>
-  <header class="hero text-center d-flex align-items-center justify-content-center">
-    <h1 class="text-white">Dirt Rally 2.0 Tracker</h1>
-  </header>
   <div class="container py-4">
-    <button class="btn btn-custom">Test <i class="bi bi-trash"></i></button>
+    <country-select id="test" v-model="country" :countries="countries"></country-select>
+    <p class="mt-3">Selected: {{ country }}</p>
   </div>
 </template>
-
-<script>
-import cars from '@/data/cars.json'
-import { getSeedData } from '@/data/seed'
-import { groupCars } from '@/helpers/groupCars'
-import { toSeconds, formatSeconds } from '@/helpers/time'
-
-console.log(getSeedData())
-console.log(groupCars(cars))
-console.log(toSeconds("3:58.223"), formatSeconds(238.223))
-export default {}
-</script>
