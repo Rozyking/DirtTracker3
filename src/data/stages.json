@@ -1,0 +1,122 @@
+{
+    "Argentina": [
+        "Las Juntas",
+        "Camino a La Puerto",
+        "Valle de los puentes",
+        "Valle de los puentes a la inversa",
+        "Camino de acantilados y rocas",
+        "Camino de acantilados y rocas inverso",
+        "San Isidro",
+        "Camino a Coneta",
+        "Miraflores",
+        "Huillaprima",
+        "El Rodeo",
+        "La Merced"
+    ],
+    "Australia": [
+        "Mount Kaye Pass",
+        "Mount Kaye Pass Reverse",
+        "Chandlers Creek",
+        "Chandlers Creek Reverse",
+        "Rockton Plains",
+        "Rockton Plains Reverse",
+        "Yambulla Mountain Ascent",
+        "Yambulla Mountain Descent",
+        "Noorinbee Ridge Ascent",
+        "Noorinbee Ridge Descent",
+        "Bondi Forest",
+        "Taylor Farm Sprint"
+    ],
+    "Belgium": [
+        "Mettet Circuit"
+    ],
+    "Canada": [
+        "Trois-Rivi\u00e8res Circuit"
+    ],
+    "France": [
+        "Loh\u00e9ac Circuit"
+    ],
+    "New Zealand": [
+        "Waimarama Point Forward",
+        "Waimarama Point Reverse",
+        "Te Awanga Forward",
+        "Ocean Beach",
+        "Waimarama Sprint Forward",
+        "Waimarama Sprint Reverse",
+        "Elsthorpe Sprint Forward",
+        "Elsthorpe Sprint Reverse",
+        "Ocean Beach Sprint Forward",
+        "Ocean Beach Sprint Reverse",
+        "Te Awanga Sprint Forward",
+        "Te Awanga Sprint Reverse"
+    ],
+    "Norway": [
+        "Hell Circuit"
+    ],
+    "Poland": [
+        "Zarobka",
+        "Zagorze",
+        "Marynka",
+        "Borysik",
+        "Kopina",
+        "Jozefin",
+        "Jezioro Rotcze",
+        "Zienki",
+        "Lejno",
+        "Jagodno",
+        "Czarny Las",
+        "Jezioro Lukie"
+    ],
+    "Portugal": [
+        "Montalegre Circuit"
+    ],
+    "Spain (Rally)": [
+        "Comienzo De Bellriu",
+        "Final de Bellriu",
+        "Centenera",
+        "Camino a Centenera",
+        "Ascenso por valle el Gualet",
+        "Salida desde Montverd",
+        "Vinedos dentro del valle Parra",
+        "Ascenso bosque Montverd",
+        "Vinedos Dardenya",
+        "Vinedos Dardenya inversa",
+        "Descenso por carretera",
+        "Subida por carretera"
+    ],
+    "Spain (Rallycross)": [
+        "Circuit de Barcelona-Catalunya"
+    ],
+    "Sweden": [
+        "Ransbysater",
+        "Norraskoga",
+        "Hamra",
+        "Lysvik",
+        "Stor-jangen Sprint",
+        "Stor-jangen Sprint Reverse",
+        "Algsjon Sprint",
+        "Skogsrallyt",
+        "Algsjon",
+        "Elgsjon",
+        "Bjorklangen",
+        "Ostra Hinnsjon"
+    ],
+    "United Kingdom": [
+        "Silverstone Circuit",
+        "Lydden Hill Circuit"
+    ],
+    "United States": [
+        "North Fork Pass",
+        "North Fork Pass Reverse",
+        "Beaver Creek Trail Forward",
+        "Beaver Creek Trail Reverse",
+        "Fuller Mountain Ascent",
+        "Fuller Mountain Descent",
+        "Hancock Creek Burst",
+        "Fury Lake Depart",
+        "Hancock Hill Sprint Forward",
+        "Hancock Hill Sprint Reverse",
+        "Tolt Valley Sprint Forward",
+        "Tolt Valley Sprint Reverse"
+    ]
+}
