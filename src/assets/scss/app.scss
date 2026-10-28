@@ -23,6 +23,15 @@ $progress-bar-bg: $brand-primary-dark;
 
 @import "bootstrap/scss/bootstrap";
 
+:root {
+  --brand-primary: #{$brand-primary};
+  --brand-primary-light: #{$brand-primary-light};
+  --brand-primary-dark: #{$brand-primary-dark};
+  --brand-dark: #{$brand-dark};
+  --brand-primary-light-rgb: #{to-rgb($brand-primary-light)};
+  --brand-dark-rgb: #{to-rgb($brand-dark)};
+}
+
 
 .btn-custom {
   @include button-variant(
@@ -43,27 +52,27 @@ $progress-bar-bg: $brand-primary-dark;
 }
 
 // brand tint for the selected stage row
-.table-active {
-  --bs-table-active-bg: #{rgba($brand-primary-light, 0.35)};
-  --bs-table-active-color: #{$brand-dark};
-}
+// .table-active {
+//   --bs-table-active-bg: #{rgba($brand-primary-light, 0.35)};
+//   --bs-table-active-color: #{$brand-dark};
+// }
 
 // Hero
-.hero {
-  background-image: url('../img/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 200px;
-}
+// .hero {
+//   background-image: url('../img/banner.jpg');
+//   background-size: cover;
+//   background-position: center;
+//   height: 200px;
+// }
 
-.mask {
-  background-color: rgba($brand-dark, 0.6); 
-}
+// .mask {
+//   background-color: rgba($brand-dark, 0.6); 
+// }
 
-footer {
-  background-color: $brand-primary-dark;
-  color: $white;
-}
+// footer {
+//   background-color: $brand-primary-dark;
+//   color: $white;
+// }
 
 i {
   color: $brand-primary-dark;

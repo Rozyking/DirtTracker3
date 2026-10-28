@@ -33,6 +33,8 @@ export default {
         draw() {
             if (!this.hasData) return;
 
+            const brandColor = getComputedStyle(document.documentElement)
+                .getPropertyValue('--brand-primary').trim();
             const labels = this.stageResults.map((r, i) => r.date || "Run " + (i + 1));
             const times = this.stageResults.map(r => toSeconds(r.time));
             const styles = this.stageResults.map(r => (r.pb ? "star" : "circle"));
@@ -57,8 +59,8 @@ export default {
                     datasets: [{
                         label: "Time",
                         data: times,
-                        borderColor: "#c26b64",
-                        backgroundColor: "#c26b64",
+                        borderColor: brandColor,
+                        backgroundColor: brandColor,
                         pointStyle: styles,
                         pointRadius: radii,
                         tension: 0.2

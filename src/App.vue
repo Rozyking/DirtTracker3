@@ -19,3 +19,21 @@ export default {
     <p class="mt-3">Selected: {{ country }}</p>
   </div>
 </template>
+
+<style scoped lang="scss">
+.hero {
+  background-image: url('./assets/img/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+
+.mask {
+  background-color: rgba(var(--brand-dark-rgb), 0.6);
+}
+
+footer {
+  background-color: var(--brand-primary-dark);
+  color: #fff;
+}
+</style>

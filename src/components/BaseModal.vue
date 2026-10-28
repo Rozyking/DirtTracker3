@@ -19,7 +19,7 @@ export default {
 <template>
   <div v-if="show">
     <div class="modal d-block" tabindex="-1" role="dialog" aria-modal="true"
-      :aria-label="title" ref="modal" style="outline: none;"
+      :aria-label="title" ref="modal"
       @click.self="$emit('close')" @keydown.esc="$emit('close')">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -38,5 +38,11 @@ export default {
       </div>
     </div>
     <div class="modal-backdrop show"></div>
-  </div >
-</template >
+  </div>
+</template>
+
+<style scoped>
+.modal {
+  outline: none;
+}
+</style>
